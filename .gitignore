@@ -1,1 +1,4 @@
-
+.DS_Store
+*.log
+# Evitar subir videos de prueba extremadamente pesados si usas otros canales
+# video_crudo.mov
