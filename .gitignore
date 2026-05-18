@@ -1,4 +1,6 @@
+node_modules/
+.env
 .DS_Store
+dist/
+build/
 *.log
-# Evitar subir videos de prueba extremadamente pesados si usas otros canales
-# video_crudo.mov
