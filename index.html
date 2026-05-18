@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RENTA CAR PREMIUM | Exclusive Rent a Car Medellín</title>
+  <meta name="description" content="Renta de autos de lujo y exóticos en Medellín. Descubre la flota exclusiva de RENTA CAR PREMIUM. Entregas VIP en El Poblado y Aeropuerto JMC.">
+  <meta name="keywords" content="renta car premium, rentar carro medellin, luxury rent a car, porsche medellin, rent a car medellin, el poblado luxury cars">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --gold: #C8A84B;
+      --gold-hover: #E6C567;
+      --bg-dark: #070709;
+      --bg-card: #111115;
+      --text-white: #ffffff;
+      --text-dim: #a0a0a0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      overflow-x: hidden;
+    }
+
+    /* Estilos Header / Navegación (Botones de arriba arreglados) */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(7, 7, 9, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--text-white);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-cta {
+      background: var(--gold);
+      color: #000 !important;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800 !important;
+      box-shadow: 0 4px 15px rgba(200, 168, 75, 0.3);
+      transition: all 0.3s ease !important;
+    }
+
+    .btn-cta:hover {
+      background: var(--gold-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200, 168, 75, 0.5);
+    }
+
+    /* Selector de Idiomas Optimizado */
+    .lang-selector {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lang-flag {
+      width: 22px;
+      height: 15px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 2px;
+      opacity: 0.4;
+      transition: all 0.3s ease;
+    }
+
+    .lang-flag:hover, .lang-flag.active {
+      opacity: 1;
+      transform: scale(1.2);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero con Video de Alta Calidad Optimizado */
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Filtro para mejorar contraste y nitidez visual del video */
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) contrast(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 span {
+      color: var(--gold);
+      text-shadow: 0 0 20px rgba(200, 168, 75, 0.4);
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text-dim);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    /* Flota / Contenido General */
+    .section-fleet {
+      padding: 100px 5%;
+      background: var(--bg-dark);
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+    }
+
+    .section-title span {
+      color: var(--gold);
+    }
+
+    .fleet-controls {
+      margin-bottom: 40px;
+    }
+
+    .sort-select {
+      background: var(--bg-card);
+      color: white;
+      padding: 12px 20px;
+      border: 1px solid rgba(200, 168, 75, 0.3);
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .car-card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+    }
+
+    .car-image-box {
+      height: 220px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .car-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .car-card:hover .car-image-box img {
+      transform: scale(1.05);
+    }
+
+    .car-details {
+      padding: 25px;
+      text-align: left;
+    }
+
+    .car-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .car-price {
+      font-size: 1.6rem;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .btn-book {
+      display: block;
+      width: 100%;
+      background: transparent;
+      color: var(--text-white);
+      border: 1px solid var(--gold);
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      nav { padding: 15px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">RENTA CAR <span>PREMIUM</span></a>
+    
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#servicios" id="navServ">Servicios</a></li>
+        <li><a href="#flota" id="navFleet">Flota</a></li>
+        <li><a href="https://wa.me/573013078662" class="btn-cta" id="navCtaText">PRENOTA</a></li>
+      </ul>
+      
+      <div class="lang-selector">
+        <img src="https://flagcdn.com/es.svg" alt="Español" class="lang-flag active" onclick="changeLanguage('es')">
+        <img src="https://flagcdn.com/us.svg" alt="English" class="lang-flag" onclick="changeLanguage('en')">
+        <img src="https://flagcdn.com/it.svg" alt="Italiano" class="lang-flag" onclick="changeLanguage('it')">
+        <img src="https://flagcdn.com/de.svg" alt="Deutsch" class="lang-flag" onclick="changeLanguage('de')">
+        <img src="https://flagcdn.com/ru.svg" alt="Русский" class="lang-flag" onclick="changeLanguage('ru')">
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="video-container">
+      <video autoplay loop muted playsinline poster="logo.jpeg">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-a-mountain-road-41662-large.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </div>
+    
+    <div class="hero-content">
+      <h1 id="heroTitle"><span>EXPERIENCIA EXCLUSIVA</span> EN MEDELLÍN</h1>
+      <p id="heroDesc">Descubre la flota élite más sofisticada de la ciudad. Conducción de clase mundial con entregas personalizadas directamente para ti.</p>
+      <a href="#flota" class="btn-cta" style="padding: 15px 35px; font-size: 1rem;" id="heroBtn">VER FLOTA</a>
+    </div>
+  </header>
+
+  <section class="section-padding section-fleet" id="flota">
+    <h2 class="section-title" id="fleetTitle">NUESTRA <span>FLOTA</span></h2>
+    
+    <div class="fleet-controls">
+      <select class="sort-select">
+        <option id="optDef">Ordenar por Precio</option>
+      </select>
+    </div>
+
+    <div class="fleet-grid">
+      <div class="car-card">
+        <div class="car-image-box">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=600" alt="Porsche">
+        </div>
+        <div class="car-details">
+          <div class="car-name">Porsche 911 Carrera</div>
+          <div class="car-price">$4.500.000 <span style="font-size: 0.9rem; color: var(--text-dim);">/ día</span></div>
+          <a href="https://wa.me/573013078662" class="btn-book">Reservar</a>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <div class="car-image-box">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600" alt="Toyota Prado">
+        </div>
+        <div class="car-details">
+          <div class="car-name">Toyota Prado TXL</div>
+          <div class="car-price">$1.200.000 <span style="font-size: 0.9rem; color: var(--text-dim);">/ día</span></div>
+          <a href="https://wa.me/573013078662" class="btn-book">Reservar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const translations = {
+      es: {
+        navServ: "Servicios",
+        navFleet: "Flota",
+        navCtaText: "PRENOTA",
+        heroTitle: "<span>EXPERIENCIA EXCLUSIVA</span> EN MEDELLÍN",
+        heroDesc: "Descubre la flota élite más sofisticada de la ciudad. Conducción de clase mundial con entregas personalizadas directamente para ti.",
+        heroBtn: "VER FLOTA",
+        fleetTitle: "NUESTRA <span>FLOTA</span>",
+        optDef: "Ordenar por Precio",
+        btnBook: "Reservar"
+      },
+      en: {
+        navServ: "Services",
+        navFleet: "Fleet",
+        navCtaText: "BOOK NOW",
+        heroTitle: "<span>LUXURY EXPERIENCE</span> IN MEDELLÍN",
+        heroDesc: "Discover the most sophisticated elite fleet in the city. World-class driving with personalized deliveries custom-tailored for you.",
+        heroBtn: "VIEW FLEET",
+        fleetTitle: "OUR <span>FLEET</span>",
+        optDef: "Sort by Price",
+        btnBook: "Book Now"
+      },
+      it: {
+        navServ: "Servizi",
+        navFleet: "Flotta",
+        navCtaText: "PRENOTA",
+        heroTitle: "<span>ESPERIENZA ESCLUSIVA</span> A MEDELLÍN",
+        heroDesc: "Scopri la flotta d'élite più sofisticata della città. Guida di classe mondiale con consegne personalizzate direttamente a te.",
+        heroBtn: "VEDI FLOTTA",
+        fleetTitle: "LA NOSTRA <span>FLOTTA</span>",
+        optDef: "Ordina per Prezzo",
+        btnBook: "Prenota"
+      },
+      de: {
+        navServ: "Dienste",
+        navFleet: "Flotte",
+        navCtaText: "BUCHEN",
+        heroTitle: "<span>LUXUS ERLEBNIS</span> IN MEDELLÍN",
+        heroDesc: "Entdecken Sie die anspruchsvollste Elite-Flotte der Stadt. Erstklassiges Fahren mit personalisierten Lieferungen direkt zu Ihnen.",
+        heroBtn: "FLOTTE SEHEN",
+        fleetTitle: "UNSERE <span>FLOTTE</span>",
+        optDef: "Nach Preis sortieren",
+        btnBook: "Buchen"
+      },
+      ru: {
+        navServ: "Услуги",
+        navFleet: "Автопарк",
+        navCtaText: "ЗАКАЗАТЬ",
+        heroTitle: "<span>ЛЮКС ОПЫТ</span> В МЕДЕЛЬИНЕ",
+        heroDesc: "Откройте для себя самый изысканный элитный автопарк в городе. Вождение мирового класса с индивидуальной доставкой прямо к вам.",
+        heroBtn: "ПОСМОТРЕТЬ НАШ АВТОПАРК",
+        fleetTitle: "НАШ <span>АВТОПАРК</span>",
+        optDef: "Сортировать по цене",
+        btnBook: "Заказать"
+      }
+    };
+
+    function changeLanguage(lang) {
+      // Guardar idioma seleccionado activo visualmente
+      document.querySelectorAll('.lang-flag').forEach(flag => {
+        flag.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Aplicar traducciones iterando sobre el objeto de traducción
+      const data = translations[lang];
+      if (data) {
+        document.getElementById('navServ').innerText = data.navServ;
+        document.getElementById('navFleet').innerText = data.navFleet;
+        document.getElementById('navCtaText').innerText = data.navCtaText;
+        document.getElementById('heroTitle').innerHTML = data.heroTitle;
+        document.getElementById('heroDesc').innerText = data.heroDesc;
+        document.getElementById('heroBtn').innerText = data.heroBtn;
+        document.getElementById('fleetTitle').innerHTML = data.fleetTitle;
+        document.getElementById('optDef').innerText = data.optDef;
+        
+        // Traducir todos los botones de reserva de los vehículos
+        document.querySelectorAll('.btn-book').forEach(btn => {
+          btn.innerText = data.btnBook;
+        });
+      }
+    }
+  </script>
+</body>
+</html>
